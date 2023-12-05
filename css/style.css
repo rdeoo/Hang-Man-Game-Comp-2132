@@ -11,7 +11,7 @@
   background-color: #fff;
 }
 
-h1 {
+#titleH1 {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -32,6 +32,52 @@ h1 {
 
 .column {
   flex: 50%;
+}
+
+.correctSelection {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  backface-visibility: hidden;
+  background-color: green;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+  font-size: large;
+  height: 40px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 40px;
+}
+.correctSelection:hover {
+  background: green;
+}
+
+.wrongSelection {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  backface-visibility: hidden;
+  background-color: red;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+  font-size: large;
+  height: 40px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 40px;
+}
+.wrongSelection:hover {
+  background: red;
 }
 
 button {
@@ -64,4 +110,12 @@ body {
 
 #column2 {
   padding-top: 250px;
+}
+
+#initialDisplay {
+  font-size: xx-large;
+}
+
+#incorrectGuessesDisplay {
+  font-size: x-large;
 }
