@@ -84,7 +84,21 @@ $myFont: "Quick-sand","san-serif";
     text-align: center; 
 }
 
+#playAgainButton
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
 
+#playAgainButton2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
 .row
 {
     display: flex;
