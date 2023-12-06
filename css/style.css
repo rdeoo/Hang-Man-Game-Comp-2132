@@ -55,7 +55,6 @@
      -moz-appearance: button;
           appearance: button;
   backface-visibility: hidden;
-  background-color: green;
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
   box-sizing: border-box;
   color: #fff;
@@ -67,6 +66,8 @@
   overflow: hidden;
   position: relative;
   text-align: center;
+  width: 40px;
+  background-color: green;
   width: 40px;
 }
 .correctSelection:hover {
@@ -78,7 +79,6 @@
      -moz-appearance: button;
           appearance: button;
   backface-visibility: hidden;
-  background-color: red;
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
   box-sizing: border-box;
   color: #fff;
@@ -91,6 +91,8 @@
   position: relative;
   text-align: center;
   width: 40px;
+  background-color: red;
+  width: 40px;
 }
 .wrongSelection:hover {
   background: red;
@@ -101,7 +103,6 @@ button {
      -moz-appearance: button;
           appearance: button;
   backface-visibility: hidden;
-  background-color: #405cf5;
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
   box-sizing: border-box;
   color: #fff;
@@ -113,6 +114,8 @@ button {
   overflow: hidden;
   position: relative;
   text-align: center;
+  width: 40px;
+  background-color: #405cf5;
   width: 40px;
 }
 button:hover {
@@ -129,7 +132,7 @@ button:hover {
 
 body {
   background-color: #8c9df9;
-  font-family: "Quick-sand", sans-serif;
+  font-family: "Quick-sand", "san-serif";
 }
 
 #column2 {
@@ -153,7 +156,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  font-family: "Quick-sand", sans-serif;
+  font-family: "Quick-sand", "san-serif";
   justify-content: center;
 }
 #pop-upWon button {
@@ -177,7 +180,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  font-family: "Quick-sand", sans-serif;
+  font-family: "Quick-sand", "san-serif";
   justify-content: center;
 }
 #pop-upLost button {

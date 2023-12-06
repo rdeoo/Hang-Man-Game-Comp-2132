@@ -1,6 +1,46 @@
+$makeFitContent: fit-content;
+$myBorder: 3px solid #667cf7;
+$myFont: "Quick-sand","san-serif";
+
+@mixin keyButtonCss
+{
+    appearance: button;
+    backface-visibility: hidden;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: large;
+    height: 40px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 40px;
+}
+
+@mixin keyPopCss
+{
+    display: none;
+    // display: flex;
+    border: 3px solid #667cf7;
+    width: 400px;
+    height: $makeFitContent;
+    background-color: #e0e4fd;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-family: $myFont;
+    justify-content: center;
+}
+
 #mainSection
 {
-    border: 3px solid #667cf7;
+    border: $myBorder;
     width: 1300px;
     height: 600px;
     position:absolute;
@@ -16,10 +56,10 @@
 
 #titleH1
 {
-    width: fit-content;
-    height: fit-content;
+    width: $makeFitContent;
+    height: $makeFitContent;
     background-color: #b2bdfb;
-    border: 3px solid #667cf7;
+    border: $myBorder;
     margin: 10px;
     padding: 20px;
     display: flex;
@@ -35,7 +75,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    width: fit-content;
+    width: $makeFitContent;
     background-color: #b2bdfb;
     border: 3px solid #667cf7;
     margin-left: auto;
@@ -58,23 +98,8 @@
 
 .correctSelection
 {
-    appearance: button;
-    backface-visibility: hidden;
+    @include keyButtonCss();
     background-color: green;
-  
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-    box-sizing: border-box;
-    color: #fff;
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
-    font-size: large;
-    height: 40px;
-    line-height: 1.15;
-    margin: 12px 0 0;
-  
-    overflow: hidden;
-    
-    position: relative;
-    text-align: center;
   
     width: 40px;
     &:hover
@@ -85,23 +110,10 @@
 
 .wrongSelection
 {
-  appearance: button;
-  backface-visibility: hidden;
+  @include keyButtonCss();
   background-color: red;
 
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
-  font-size: large;
-  height: 40px;
-  line-height: 1.15;
-  margin: 12px 0 0;
-
-  overflow: hidden;
   
-  position: relative;
-  text-align: center;
 
   width: 40px;
   &:hover
@@ -113,23 +125,10 @@
 
 button
 {
-  appearance: button;
-  backface-visibility: hidden;
+  @include keyButtonCss();
   background-color: #405cf5;
 
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
-  font-size: large;
-  height: 40px;
-  line-height: 1.15;
-  margin: 12px 0 0;
-
-  overflow: hidden;
   
-  position: relative;
-  text-align: center;
 
   width: 40px;
   &:hover
@@ -156,7 +155,7 @@ button
 body
 {
     background-color: #8c9df9;
-    font-family: "Quick-sand",sans-serif;
+    font-family: $myFont;
 }
 
 
@@ -169,40 +168,16 @@ body
 #initialDisplay
 {
     font-size: xx-large;
-    // display: inline;
-    // justify-content: space-between;
-    // flex-direction: row;
 
-   
 }
 
 
 #pop-upWon
 {   
-    display: none;
-    // display: flex;
-    border: 3px solid #667cf7;
-    width: 400px;
-    height: fit-content;
-    background-color: #e0e4fd;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    font-family: "Quick-sand",sans-serif;
-    justify-content: center;
+    @include keyPopCss();
     button
     {
-        width: fit-content;
-        // margin-left: auto;
-        // margin-right: auto;
-        // display: flex;
-        // justify-content: center;
-
-        
-        
+        width: $makeFitContent;
     }
     h2 
     {
@@ -213,27 +188,10 @@ body
 
 #pop-upLost
 {   
-    display: none;
-    // display: flex;
-    border: 3px solid #667cf7;
-    width: 400px;
-    height: fit-content;
-    background-color: #e0e4fd;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    font-family: "Quick-sand",sans-serif;
-    justify-content: center;
+    @include keyPopCss();
     button
     {
-        width: fit-content;
-       
-
-        // display: flex;
-        // justify-content: center;
+        width: $makeFitContent;
         
     }
     h2 
@@ -269,7 +227,7 @@ body
     {   
       
         width: 590px;
-        height: fit-content;
+        height: $makeFitContent;
     }
 
     #mainImg

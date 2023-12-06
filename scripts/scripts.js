@@ -1,3 +1,4 @@
+// Creating constants of all the dom elements i want to access and modify
 const hintDiv = document.getElementById("displayHints");
 const displayLettersDiv = document.getElementById("displayLetters");
 const buttons = document.querySelectorAll(".letterButton");
@@ -10,8 +11,8 @@ const playAgainButton = document.getElementById("playAgainButton");
 const playAgainButton2 = document.getElementById("playAgainButton2");
 
 
-console.log(buttons);
-
+// console.log(buttons);
+// Java script object which holds programming lanaguages. Inside these programming languages are words representing the language and hints desribing the language
 const programmingLanguages =
 {
     java: 
@@ -66,12 +67,17 @@ const programmingLanguages =
     },
 }
 
+// define some variables that are going to be changed frequently
 let incorrectGuesses = 0;
 let correctLetters   = [];
 let selectedWord;
 let selectedHint;
+
+// max amount of user guesses constant
 const maxAmountOfUserGuesses = 6;
 
+
+// function to pick a random programming language from the object
 function getRandomWordAndHint()
 {
     const programmingLanguagesKeys = Object.keys(programmingLanguages);
@@ -80,28 +86,25 @@ function getRandomWordAndHint()
 }
 
 
-
+// created a constant to hold the return values of the function
 const getInfo = getRandomWordAndHint();
 
-
+// put info into variables
 selectedWord = getInfo.word;
 selectedHint = getInfo.hint;
 
+// console.log(selectedWord);
+// console.log(selectedHint);
 
-
-console.log(selectedWord);
-console.log(selectedHint);
-
+// seperated each letter and created new array to check agaisnt correct letters
 let split = selectedWord.split("")
 
-console.log(split);
+// console.log(split);
 
+// set hintDiv innerhtml to whatever the hint is that has been selected
 hintDiv.innerHTML = `<h3>Hint: ${selectedHint}</h3>`;
 
-
-  
-
-
+// function to loop through the selected word and make h1 elements accroding to the words length and display each letter as _
 const showWordState = () =>
 {
   for(let letter of selectedWord)
@@ -120,8 +123,9 @@ const showWordState = () =>
 }
 
 
-
-
+// main logic for hangman game. this loop through all the letterButtons and add a event listener. If the letter that is selected is correct the button will be diasbled and turned green. The button text will be added to correctLetters array.
+// if split and correctLetters arrays match then the pop up indicating you won will slide down. If you guess incorrect the button will turn red and your incorrect guesses will be updated. If you have 1-3 it will show low warning
+// but if its greater then 3 it will show high warning. If incorrect guesses equals maxnumofuser guesses then the pop up indidicating you lost will slide down. The hangman image changes depending on how many incorrect guesses you have
 
 buttons.forEach(button => {
   button.addEventListener('click', function () 
@@ -134,11 +138,10 @@ buttons.forEach(button => {
     {
       if (guessedLetter.toLowerCase() === selectedWord[i]) 
       {
-        // The guessed letter is in the word
-        console.log(`${guessedLetter} is in the word!`);
+        
+        // console.log(`${guessedLetter} is in the word!`);
         button.classList.remove("resetButton")
         button.classList.add("correctSelection");
-        // Update the corresponding h1 element with the correct letter
         displayLettersDiv.children[i].textContent = guessedLetter;
         correctLetters[i] = guessedLetter.toLowerCase();
         
@@ -149,7 +152,6 @@ buttons.forEach(button => {
           console.log(split);
           console.log(correctLetters)
           console.log("Big up")
-          // buttons.disabled = true;
           for(i = 0; i < buttons.length; i++)
           {
             buttons[i].disabled = true;
@@ -161,8 +163,8 @@ buttons.forEach(button => {
     }
     if (!correctGuess) 
     {
-      // The guessed letter is not in the word
-      console.log(`${guessedLetter} is not in the word.`);
+      
+      // console.log(`${guessedLetter} is not in the word.`);
       button.classList.remove("resetButton");
       button.classList.add("wrongSelection");
 
@@ -174,17 +176,15 @@ buttons.forEach(button => {
         inncorrectGuessesDisplay.classList.add("lowWarning");
       }
       else if(incorrectGuesses === maxAmountOfUserGuesses)
-       {       console.log("rah man")
-                
-                // lostPopup.style.display = "flex";
-                const $lostpopUp = $(lostPopup);
-                $lostpopUp.slideDown();
-                showUserTheWord.innerHTML = `<p>The word was: ${selectedWord}</p>`;
-                // buttons.disabled = true;
-                for(i = 0; i < buttons.length; i++)
-                {
-                   buttons[i].disabled = true;
-                }
+       {      
+              //  console.log("rah man")
+              const $lostpopUp = $(lostPopup);
+              $lostpopUp.slideDown();
+              showUserTheWord.innerHTML = `<p>The word was: ${selectedWord}</p>`;
+              for(i = 0; i < buttons.length; i++)
+              {
+                buttons[i].disabled = true;
+              }
       } 
       else 
       { 
@@ -200,17 +200,15 @@ buttons.forEach(button => {
 }
 );
 
-
+// function to compare arrays which i found on stack overflow. Im not the best with JavaScript yet as im still new. Im not sure if there is a better way to comapre arrays
 const compareArrays = (a, b) =>
 a.length === b.length && a.every((element, index) => element === b[index])
 
-
-
-
+// call method to display words state as _
 showWordState();
 
 
-
+// if user wins and wants to play again when play again button is clicked varaibles are reset, new word and hint is picked, its state is displayed, image goes back to intital image, and classes are removed and added. The game is ready to be played again
 playAgainButton.addEventListener("click", function()
 {  
   const $wonpopUp = $(wonPopup);
@@ -244,7 +242,7 @@ playAgainButton.addEventListener("click", function()
 }
   )
 
-
+// same exact thing as above just for play again button thats in the pop up if the user lost
 playAgainButton2.addEventListener("click", function()
   {  
     const $lostpopUp = $(lostPopup);
