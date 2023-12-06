@@ -3,7 +3,8 @@
     border: 3px solid #667cf7;
     width: 1300px;
     height: 600px;
-    position: absolute;
+    position:absolute;
+    padding-top: 100px;
     margin: auto;
     left: 0;
     right: 0;
@@ -25,7 +26,24 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+   
 }
+
+#footerP
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    background-color: #b2bdfb;
+    border: 3px solid #667cf7;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-align: center; 
+}
+
 
 .row
 {
@@ -178,6 +196,11 @@ body
     button
     {
         width: fit-content;
+        // margin-left: auto;
+        // margin-right: auto;
+        // display: flex;
+        // justify-content: center;
+
         
         
     }
@@ -207,6 +230,11 @@ body
     button
     {
         width: fit-content;
+       
+
+        // display: flex;
+        // justify-content: center;
+        
     }
     h2 
     {
@@ -233,4 +261,44 @@ body
 .resetIncorrectGuessesColor
 {
     color: black;
+}
+
+@media screen and (max-width: 600px)
+{
+    #mainSection
+    {   
+      
+        width: 590px;
+        height: fit-content;
+    }
+
+    #mainImg
+    {
+        width: 300px;
+        height: 300px;
+    }
+    .row
+    {
+        flex-direction: column;
+    }
+    .correctSelection
+    {
+        margin: 10px 0 0;
+       
+    }
+
+    .wrongSelection
+    {   
+        margin: 10px 0 0;
+    
+    }
+    button
+    { 
+        margin: 10px 0 0;
+    }
+    #column2
+    {
+        padding-top: 100px;
+    }
+    
 }

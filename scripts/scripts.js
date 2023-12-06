@@ -154,7 +154,8 @@ buttons.forEach(button => {
           {
             buttons[i].disabled = true;
           }
-          wonPopup.style.display = "flex";
+          const $wonpopUp = $(wonPopup);
+          $wonpopUp.slideDown();
         }
       }
     }
@@ -174,7 +175,10 @@ buttons.forEach(button => {
       }
       else if(incorrectGuesses === maxAmountOfUserGuesses)
        {       console.log("rah man")
-                lostPopup.style.display = "flex";
+                
+                // lostPopup.style.display = "flex";
+                const $lostpopUp = $(lostPopup);
+                $lostpopUp.slideDown();
                 showUserTheWord.innerHTML = `<p>The word was: ${selectedWord}</p>`;
                 // buttons.disabled = true;
                 for(i = 0; i < buttons.length; i++)
@@ -208,8 +212,9 @@ showWordState();
 
 
 playAgainButton.addEventListener("click", function()
-{ 
-
+{  
+  const $wonpopUp = $(wonPopup);
+  $wonpopUp.slideUp();
   selectedWord = "";
   selectedHint = "";
   split = ""
@@ -241,7 +246,9 @@ playAgainButton.addEventListener("click", function()
 
 
 playAgainButton2.addEventListener("click", function()
-  { 
+  {  
+    const $lostpopUp = $(lostPopup);
+    $lostpopUp.slideUp()
     selectedWord = "";
     selectedHint = "";
     split = ""
