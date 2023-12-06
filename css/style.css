@@ -124,6 +124,65 @@ body {
   font-size: xx-large;
 }
 
+#pop-upWon {
+  display: none;
+  border: 3px solid #667cf7;
+  width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #e0e4fd;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-family: "Quick-sand", sans-serif;
+  justify-content: center;
+}
+#pop-upWon button {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#pop-upWon h2 {
+  color: green;
+}
+
+#pop-upLost {
+  display: none;
+  border: 3px solid #667cf7;
+  width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #e0e4fd;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-family: "Quick-sand", sans-serif;
+  justify-content: center;
+}
+#pop-upLost button {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#pop-upLost h2 {
+  color: red;
+}
+
 #incorrectGuessesDisplay {
   font-size: x-large;
+}
+
+.resetButton {
+  background-color: #405cf5;
+}
+.resetButton:hover {
+  background: #d8defd;
+}
+
+.resetIncorrectGuessesColor {
+  color: black;
 }
