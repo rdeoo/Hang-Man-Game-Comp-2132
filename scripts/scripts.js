@@ -2,6 +2,7 @@ const hintDiv = document.getElementById("displayHints");
 const displayLettersDiv = document.getElementById("displayLetters");
 const buttons = document.querySelectorAll(".letterButton");
 const inncorrectGuessesDisplay = document.getElementById("inncorrectGuesses")
+const mainImg = document.getElementById("mainImg");
 
 console.log(buttons);
 
@@ -133,9 +134,18 @@ buttons.forEach(button => {
         console.log(`${guessedLetter} is not in the word.`);
         // Add your logic for incorrect guess here
         button.classList.add("wrongSelection");
+        
         incorrectGuesses++;
         console.log(incorrectGuesses)
-
+        if(incorrectGuesses === 1 || incorrectGuesses === 2 || incorrectGuesses === 3)
+        {
+          inncorrectGuessesDisplay.classList.add("lowWarning");
+        }
+        else
+        {
+          inncorrectGuessesDisplay.classList.add("highWarning");
+        }
+        mainImg.src = `images/${incorrectGuesses}.png`
         inncorrectGuessesDisplay.innerHTML = `<h2 id ="incorrectGuessesDisplay">Incorrect guesses: ${incorrectGuesses}/6</h2>`;
       }
       button.disabled = true; 

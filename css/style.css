@@ -103,6 +103,14 @@ button:hover {
   background: #d8defd;
 }
 
+.lowWarning {
+  color: #FFCC00;
+}
+
+.highWarning {
+  color: #FF0000;
+}
+
 body {
   background-color: #8c9df9;
   font-family: "Quick-sand", sans-serif;
